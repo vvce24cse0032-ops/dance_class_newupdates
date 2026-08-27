@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h1, h2, h3, h4, .royal-font {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@keyframes slowPan {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.animate-slow-pan {
+  animation: slowPan 25s infinite alternate ease-in-out;
+}
+
+.kicker {
+  color: #d4af37;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-divider {
+  height: 1px;
+  width: 6rem;
+  margin: 1.25rem auto 0;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+  opacity: 0.8;
+}
+
+.btn-royal {
+  background: linear-gradient(135deg, #d4af37 0%, #aa8a2e 100%);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.btn-royal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.38);
+}
+
+.btn-outline {
+  border: 1px solid rgba(74, 4, 4, 0.25);
+  color: #4a0404;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: #4a0404;
+  color: #fff;
+  border-color: #4a0404;
+}
+
+.info-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 16px 36px -16px rgba(74, 4, 4, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 44px -14px rgba(74, 4, 4, 0.18);
+}

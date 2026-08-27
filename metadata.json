@@ -1,0 +1,6 @@
+{
+  "name": "Nruthyathi Kalaashaale",
+  "description": "Official website for Nruthyathi Kalaashaale, a classical Indian Bharatanatyam dance institute in Mysuru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

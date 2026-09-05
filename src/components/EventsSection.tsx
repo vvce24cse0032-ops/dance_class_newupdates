@@ -36,7 +36,7 @@ export default function EventsSection() {
         </motion.div>
 
         {/* Events Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto items-stretch">
+        <div className={`${EVENTS_DATA.length === 1 ? 'max-w-2xl' : 'grid md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl'} mx-auto items-stretch`}>
           {EVENTS_DATA.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -148,7 +148,7 @@ export default function EventsSection() {
                   {!item.invitationUrl && !item.brochureUrl && (
                     <div className="flex items-center gap-2 text-[#d4af37] text-xs font-semibold tracking-widest uppercase">
                       <Sparkles className="w-4 h-4 text-[#d4af37]" />
-                      <span>{item.id === 'anugraha-2026' ? 'Thematic Presentation' : 'Annual Showcase • Entry by Invitation'}</span>
+                      <span>Annual Showcase • Entry by Invitation</span>
                     </div>
                   )}
                 </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 
 interface NavbarProps {
   onOpenEnquiry?: () => void;
@@ -20,6 +20,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Events', href: '#events' },
+    { name: 'Archive', href: '#archive' },
     { name: 'Rangapravesha', href: '#rangapravesha' },
     { name: 'Achievements', href: '#achievements' },
     { name: 'Gallery', href: '#gallery' },
@@ -47,9 +48,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           <div className="hidden lg:block">
             <span className="text-lg md:text-xl font-bold text-[#4a0404] tracking-tight uppercase royal-font block leading-none">
               Nruthyathi <span className="text-[#d4af37] font-normal">Kalaashaale</span>
-            </span>
-            <span className="text-[9px] uppercase tracking-[0.25em] text-[#aa8a2e] font-semibold block mt-1">
-              Mysuru
             </span>
           </div>
         </a>
@@ -84,13 +82,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
 
         {/* Mobile menu toggle */}
         <div className="flex items-center gap-2 md:hidden">
-          <a
-            href="tel:+917760134034"
-            className="p-2 text-[#4a0404] hover:text-[#d4af37] transition"
-            aria-label="Call Institute"
-          >
-            <Phone className="w-5 h-5" />
-          </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation menu"
@@ -124,11 +115,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 Get In Touch
               </a>
               <div className="flex justify-center gap-4 text-gray-500 pt-2">
-                <a href="tel:+917760134034" className="hover:text-[#4a0404] flex items-center gap-1.5 text-[11px] font-normal">
-                  <Phone className="w-3.5 h-3.5 text-[#d4af37]" /> +91 77601 34034
-                </a>
                 <a href="mailto:contact@nruthyathikalaashaale.com" className="hover:text-[#4a0404] flex items-center gap-1.5 text-[11px] font-normal">
-                  <Mail className="w-3.5 h-3.5 text-[#d4af37]" /> Email
+                  <Mail className="w-3.5 h-3.5 text-[#d4af37]" /> contact@nruthyathikalaashaale.com
                 </a>
               </div>
             </div>

@@ -14,6 +14,22 @@ export interface EventItem {
   isUpcoming?: boolean;
 }
 
+export interface PastPerformanceItem {
+  id: string;
+  badge?: string;
+  title: string;
+  subtitle?: string;
+  date: string;
+  venue?: string;
+  guests?: string;
+  honouredGuests?: string[];
+  description: string;
+  image?: string;
+  invitationUrl?: string;
+  brochureUrl?: string;
+  tags?: string[];
+}
+
 export interface RangapraveshaDisciple {
   name: string;
   date: string;
@@ -87,18 +103,6 @@ export const ABOUT_DATA = {
 
 export const EVENTS_DATA: EventItem[] = [
   {
-    id: 'anugraha-2026',
-    badge: 'Upcoming',
-    title: 'ANUGRAHA 2026',
-    subtitle: 'Kalathilaka, SNS Awardee Guru DR. Vasundhara Doraswamy',
-    description:
-      'A rare glimpse of five generation legacy Bharathanatyam Thematic Presentation Kshaathra Draupadi by Karnataka Kalathilaka, SNS Awardee Guru DR. Vasundhara Doraswamy',
-    dateTime: 'Sunday, 30 August 2026 · 5:30 PM',
-    venue: 'Vasundhara Bhavana, Kalandika, Saraswatipuram, Mysuru',
-    guests: 'Karnataka Kalathilaka, SNS Awardee Guru DR. Vasundhara Doraswamy',
-    isUpcoming: true,
-  },
-  {
     id: 'samaagama-2026',
     badge: 'Annual Festival',
     title: 'Samaagama 2026',
@@ -107,6 +111,27 @@ export const EVENTS_DATA: EventItem[] = [
     dateTime: 'Annual Festival · Dates to be announced',
     venue: 'Mysuru',
     isUpcoming: true,
+  },
+];
+
+export const PAST_PERFORMANCES_DATA: PastPerformanceItem[] = [
+  {
+    id: 'anugraha',
+    badge: 'Thematic Presentation',
+    title: 'ANUGRAHA',
+    subtitle: 'Kshaathra Draupadi — Bharatanatyam Thematic Presentation',
+    date: 'Sunday, 30 August · 5:30 PM',
+    venue: 'Vasundhara Bhavana, Kalandika, Saraswatipuram, Mysuru',
+    honouredGuests: [
+      'Dr. Kripa Phadke',
+      'Dr. Sheela Sridhar',
+      'Guru Sri Sandesh Bharghav',
+    ],
+    guests: 'Dr. Kripa Phadke, Dr. Sheela Sridhar, Guru Sri Sandesh Bharghav',
+    description:
+      'A rare glimpse of a five-generation legacy: Bharatanatyam Thematic Presentation "Kshaathra Draupadi" by Karnataka Kalathilaka, SNS Awardee Guru DR. Vasundhara Doraswamy. An evocative production blending sculptural precision, intense rhythmic footwork, and deep spiritual expression.',
+    image: '/images/RAW03377.jpg',
+    tags: ['Thematic Presentation', 'Vasundhara Style', 'Guru Dr. Vasundhara Doraswamy'],
   },
 ];
 
@@ -257,6 +282,13 @@ export const PRESS_ITEMS: PressItem[] = [
     date: 'Jul 19, 2026',
     image: '/images/press/nithyashree-2026-preview.jpg',
   },
+  {
+    id: 'nithyashree-2026-report',
+    title: '"Enthralling Bharatanatyam Rangavidhipraveshika"',
+    publication: 'Star of Mysore',
+    date: 'Aug 20, 2026',
+    image: '/images/press/nithyashree-2026-report.jpg',
+  },
 ];
 
 export const GALLERY_IMAGES = [
@@ -295,6 +327,12 @@ export const VIDEO_MILESTONES: VideoMilestone[] = [
     youtubeId: 'BASxn-P7HO8',
     subtitle: 'Solo Rangavidhipraveshika Recital',
   },
+  {
+    id: 'nithyashree',
+    title: 'Kum. Nithyashree',
+    youtubeId: '4H-Oj768FfU',
+    subtitle: 'Solo Rangavidhipraveshika Recital',
+  },
 ];
 
 export const TRUSTEES_DATA: TrusteeItem[] = [
@@ -311,10 +349,62 @@ export const TRUSTEES_DATA: TrusteeItem[] = [
 ];
 
 export const CONTACT_DATA = {
-  phone: '+91 77601 34034',
-  phoneHref: 'tel:+917760134034',
   email: 'contact@nruthyathikalaashaale.com',
   emailHref: 'mailto:contact@nruthyathikalaashaale.com',
   location: 'Vivekanandanagar, Mysuru',
   mapsLink: 'https://maps.app.goo.gl/7Uc2YsaWmia74DWL6',
 };
+
+export interface NotablePerformanceItem {
+  id: string;
+  title: string;
+  category: string;
+  location: string;
+  summary: string;
+  description: string;
+  image: string;
+  tags: string[];
+}
+
+export const NOTABLE_PERFORMANCES: NotablePerformanceItem[] = [
+  {
+    id: 'chidambaram-natyanjali',
+    title: 'Chidambaram Natyanjali',
+    category: 'Sacred Temple Festival',
+    location: 'Thillai Nataraja Temple, Chidambaram',
+    summary: 'Team Nruthyathi led in classical dance presentation at the historic Chidambaram Natyanjali.',
+    description: 'A deeply reverent classical recital presented by Team Nruthyathi at the sanctum sanctorum of Lord Nataraja in Chidambaram, upholding the age-old sacred traditions of Bharatanatyam.',
+    image: '/images/RAW05165.jpg',
+    tags: ['Chidambaram Natyanjali', 'Temple Recital', 'Team Nruthyathi'],
+  },
+  {
+    id: 'mysuru-dasara',
+    title: 'Mysuru Dasara Performances',
+    category: 'State Cultural Mahotsav',
+    location: 'Mysuru, Karnataka',
+    summary: 'Team Nruthyathi performances at the world-renowned Mysuru Dasara Mahotsav.',
+    description: 'Graceful group and solo presentations at the state cultural celebrations of Mysuru Dasara, presenting rhythmic precision and vibrant classical storytelling to thousands of connoisseurs.',
+    image: '/images/DSC06732.jpg',
+    tags: ['Mysuru Dasara', 'Cultural Mahotsav', 'Team Nruthyathi'],
+  },
+  {
+    id: 'samaagama-festival-series',
+    title: 'SAMAAGAMA Annual Festivals',
+    category: 'Annual Classical Dance Festival',
+    location: 'Mysuru',
+    summary: 'Annual Bharatanatyam festival series organized and curated by Nruthyathi Kalaashaale.',
+    description: 'A celebrated multi-edition classical festival providing an esteemed cultural platform for young disciples to perform alongside senior doyens of classical Indian dance.',
+    image: '/images/press/samaagama-2025-report.jpg',
+    tags: ['Samaagama', 'Annual Festival', 'Classical Heritage'],
+  },
+  {
+    id: 'tedx-nrutya-naatakothsava',
+    title: 'TEDxJSSMC & Nrutya Naatakothsava',
+    category: 'Thematic & Cultural Productions',
+    location: 'Mysuru',
+    summary: 'Leading Team Nruthyathi in prestigious stage productions and thematic showcases.',
+    description: 'Presentations combining dynamic choreography, expressive abhinaya, and cultural narratives across distinguished academic and performing arts stages in Mysuru.',
+    image: '/images/RKV_3220.jpg',
+    tags: ['TEDxJSSMC', 'Nrutya Naatakothsava', 'Thematic Productions'],
+  },
+];

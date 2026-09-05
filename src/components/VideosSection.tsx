@@ -25,7 +25,7 @@ export default function VideosSection() {
         </motion.div>
 
         {/* Video Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {VIDEO_MILESTONES.map((item, idx) => (
             <motion.div
               key={item.id}

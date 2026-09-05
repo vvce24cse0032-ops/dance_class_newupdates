@@ -1,5 +1,5 @@
 import { CONTACT_DATA } from '../data/siteData';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -21,12 +21,6 @@ export default function Footer() {
 
         {/* Quick Contact Links */}
         <div className="flex justify-center flex-wrap gap-6 mb-8 text-gray-600 text-sm">
-          <a
-            href={CONTACT_DATA.phoneHref}
-            className="hover:text-[#4a0404] flex items-center gap-1.5 transition"
-          >
-            <Phone className="w-4 h-4 text-[#d4af37]" /> {CONTACT_DATA.phone}
-          </a>
           <a
             href={CONTACT_DATA.emailHref}
             className="hover:text-[#4a0404] flex items-center gap-1.5 transition"

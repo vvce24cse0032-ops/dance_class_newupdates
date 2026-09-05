@@ -8,6 +8,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import EventsSection from './components/EventsSection';
+import ArchiveSection from './components/ArchiveSection';
+import NotablePerformancesSection from './components/NotablePerformancesSection';
 import RangapraveshaSection from './components/RangapraveshaSection';
 import AchievementsSection from './components/AchievementsSection';
 import GallerySection from './components/GallerySection';
@@ -34,6 +36,12 @@ export default function App() {
 
         {/* Grand Events (Upcoming & Annual) */}
         <EventsSection />
+
+        {/* Past Performances & Historical Archive */}
+        <ArchiveSection />
+
+        {/* Notable Performances & Sacred Stages */}
+        <NotablePerformancesSection />
 
         {/* Sacred Milestones / Rangavidhi Praveshika Archive by Year */}
         <RangapraveshaSection />

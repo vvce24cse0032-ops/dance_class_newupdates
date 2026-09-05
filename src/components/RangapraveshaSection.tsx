@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import LightboxModal from './LightboxModal';
 
 export default function RangapraveshaSection() {
-  const [activeYear, setActiveYear] = useState('2026');
+  const [activeYear, setActiveYear] = useState('2025');
   const [modalImage, setModalImage] = useState<{ src: string; title: string; subtitle: string } | null>(null);
 
   const currentYearData = RANGAPRAVESHA_DATA.find((g) => g.year === activeYear);
@@ -45,7 +45,7 @@ export default function RangapraveshaSection() {
                     : 'bg-stone-100 text-[#4a0404] hover:bg-stone-200 border border-[#d4af37]/30'
                 }`}
               >
-                {group.year}
+                Yr: {group.year}
               </button>
             );
           })}

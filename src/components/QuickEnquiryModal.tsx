@@ -56,11 +56,7 @@ export default function QuickEnquiryModal({ isOpen, onClose }: QuickEnquiryModal
                   Thank You!
                 </h3>
                 <p className="text-gray-600 text-sm mb-6">
-                  Your enquiry has been prepared in your email client. You can also call us directly at{' '}
-                  <a href={CONTACT_DATA.phoneHref} className="text-[#aa8a2e] font-semibold underline">
-                    {CONTACT_DATA.phone}
-                  </a>
-                  .
+                  Your enquiry has been prepared in your email client. Our team will review your message and reply to your email promptly.
                 </p>
                 <button
                   onClick={() => {

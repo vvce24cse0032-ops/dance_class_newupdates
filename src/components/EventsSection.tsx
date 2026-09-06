@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { EVENTS_DATA } from '../data/siteData';
-import { Calendar, MapPin, UserCheck, MailOpen, BookOpen, Sparkles } from 'lucide-react';
+import { Calendar, MapPin, UserCheck, MailOpen, BookOpen, Sparkles, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 import LightboxModal from './LightboxModal';
 
@@ -66,9 +66,9 @@ export default function EventsSection() {
                         <h3 className="text-xl md:text-2xl font-bold text-[#d4af37] uppercase tracking-wide royal-font leading-tight">
                           {item.title}
                         </h3>
-                        <p className="text-[#f5df98] text-xs uppercase tracking-[0.2em] font-medium font-sans mt-1">
+                        <h4 className="text-[#f5df98] text-xs uppercase tracking-[0.2em] font-medium font-sans mt-1">
                           {item.subtitle}
-                        </p>
+                        </h4>
                       </div>
                     </div>
                   ) : (
@@ -76,19 +76,89 @@ export default function EventsSection() {
                       <h3 className="text-2xl md:text-3xl font-bold text-[#d4af37] uppercase tracking-wide royal-font leading-tight">
                         {item.title}
                       </h3>
-                      <p className="text-[#f5df98] text-xs md:text-sm uppercase tracking-[0.18em] font-medium font-sans mt-2.5 leading-snug">
+                      <h4 className="text-[#f5df98] text-xs md:text-sm uppercase tracking-[0.18em] font-medium font-sans mt-2.5 leading-snug">
                         {item.subtitle}
+                      </h4>
+                    </div>
+                  )}
+
+                  {/* Introductory Normal Body Text */}
+                  <div className="mb-6 space-y-2 font-sans">
+                    {item.introHeadline && (
+                      <p className="text-white/90 text-sm md:text-base font-normal leading-relaxed">
+                        {item.introHeadline}
+                      </p>
+                    )}
+                    <p className="text-white/80 text-sm font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Detailed Event Sections */}
+                  {item.inauguration && (
+                    <div className="mb-5 space-y-1 border-t border-[#d4af37]/25 pt-5 font-sans">
+                      <p className="font-bold text-[#f5df98] text-sm md:text-base tracking-wide">
+                        {item.inauguration.heading}
+                      </p>
+                      <p className="font-bold text-white text-base md:text-lg">
+                        {item.inauguration.name}
+                      </p>
+                      {item.inauguration.roles.map((role, rIdx) => (
+                        <p key={rIdx} className="font-bold text-white/90 text-xs md:text-sm">
+                          {role}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {item.presentation && (
+                    <div className="mb-5 space-y-1 border-t border-white/10 pt-5 font-sans">
+                      <p className="font-bold text-[#f5df98] text-sm md:text-base tracking-wide">
+                        {item.presentation.heading}
+                      </p>
+                      <p className="font-bold text-white/80 text-xs md:text-sm">
+                        {item.presentation.byLabel}
+                      </p>
+                      <p className="font-bold text-white text-sm md:text-base">
+                        {item.presentation.byText}
                       </p>
                     </div>
                   )}
 
-                  {/* Description */}
-                  <p className="text-white/80 text-sm font-light leading-relaxed mb-6 font-sans">
-                    {item.description}
-                  </p>
+                  {item.accompanyingArtistes && (
+                    <div className="mb-6 space-y-1.5 border-t border-white/10 pt-5 font-sans">
+                      <p className="font-bold text-[#f5df98] text-sm md:text-base tracking-wide mb-2">
+                        {item.accompanyingArtistes.heading}
+                      </p>
+                      <div className="space-y-1 text-white text-xs md:text-sm">
+                        {item.accompanyingArtistes.artistes.map((artiste, aIdx) => (
+                          <p key={aIdx} className="font-bold">
+                            {artiste}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
-                  {/* Event Details */}
-                  {item.dateTime && (
+                  {item.eventSchedule && (
+                    <div className="space-y-2 border-t border-[#d4af37]/25 pt-5 mb-8 font-sans">
+                      <p className="font-bold text-white text-xs md:text-sm flex items-center gap-2.5">
+                        <Calendar className="w-4 h-4 text-[#d4af37] shrink-0" />
+                        <span className="font-bold">Date: {item.eventSchedule.date}</span>
+                      </p>
+                      <p className="font-bold text-white text-xs md:text-sm flex items-center gap-2.5">
+                        <Clock className="w-4 h-4 text-[#d4af37] shrink-0" />
+                        <span className="font-bold">Time: {item.eventSchedule.time}</span>
+                      </p>
+                      <p className="font-bold text-white text-xs md:text-sm flex items-start gap-2.5">
+                        <MapPin className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                        <span className="font-bold">Venue: {item.eventSchedule.venue}</span>
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Fallback Legacy Event Details if no structured schedule */}
+                  {!item.eventSchedule && item.dateTime && (
                     <div className="space-y-2.5 text-white/75 text-xs font-sans mb-8 border-t border-white/10 pt-5">
                       <p className="flex items-start gap-2.5">
                         <Calendar className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
@@ -148,7 +218,7 @@ export default function EventsSection() {
                   {!item.invitationUrl && !item.brochureUrl && (
                     <div className="flex items-center gap-2 text-[#d4af37] text-xs font-semibold tracking-widest uppercase">
                       <Sparkles className="w-4 h-4 text-[#d4af37]" />
-                      <span>Annual Showcase • Entry by Invitation</span>
+                      <span>Annual Showcase</span>
                     </div>
                   )}
                 </div>

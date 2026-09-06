@@ -49,6 +49,7 @@ export default function NotablePerformancesSection() {
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

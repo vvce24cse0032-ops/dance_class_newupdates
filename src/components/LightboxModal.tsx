@@ -98,6 +98,7 @@ export default function LightboxModal({
             <img
               src={imageSrc}
               alt={imageAlt}
+              referrerPolicy="no-referrer"
               className="max-w-[92vw] max-h-[78vh] object-contain rounded-lg border-2 border-[#d4af37]/40 shadow-2xl bg-black/40"
             />
 

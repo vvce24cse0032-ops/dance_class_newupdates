@@ -3,9 +3,29 @@ export interface EventItem {
   badge: string;
   title: string;
   subtitle: string;
+  introHeadline?: string;
   disciple?: string;
   portrait?: string;
   description: string;
+  inauguration?: {
+    heading: string;
+    name: string;
+    roles: string[];
+  };
+  presentation?: {
+    heading: string;
+    byLabel: string;
+    byText: string;
+  };
+  accompanyingArtistes?: {
+    heading: string;
+    artistes: string[];
+  };
+  eventSchedule?: {
+    date: string;
+    time: string;
+    venue: string;
+  };
   dateTime?: string;
   venue?: string;
   guests?: string;
@@ -107,9 +127,36 @@ export const EVENTS_DATA: EventItem[] = [
     badge: 'Annual Festival',
     title: 'Samaagama 2026',
     subtitle: 'Annual Showcase',
-    description: 'Our flagship annual celebration. Witness the collective energy of our students in a grand showcase of Indian classical excellence.',
-    dateTime: 'Annual Festival · Dates to be announced',
-    venue: 'Mysuru',
+    introHeadline: 'A Celebration of Dance, Tradition and Togetherness',
+    description:
+      'Our flagship annual celebration. Witness the collective energy of our students in a grand showcase of Indian classical excellence.',
+    inauguration: {
+      heading: 'Inauguration By',
+      name: 'Guru Sri Sandesh Bhargav',
+      roles: [
+        'Renowned Bharathanatyam Artist and Guru',
+        'Vice President – Strategy Transformation, Kaynes Technology',
+      ],
+    },
+    presentation: {
+      heading: 'Bharathanatyam Presentation',
+      byLabel: 'By',
+      byText: 'Disciples and Grand disciples of Smt. Anusha Varun',
+    },
+    accompanyingArtistes: {
+      heading: 'Accompanying Artistes',
+      artistes: [
+        'Nattuvanga: Smt. Anusha Varun',
+        'Vocal: Vidushi Smt. Shylaja Praveen',
+        'Mrudangam: Vidwan Sri Vikram Bharadwaj',
+        'Flute: Vidwan Sri Samruddh Srinivas',
+      ],
+    },
+    eventSchedule: {
+      date: 'Sunday, 06th September',
+      time: '04:30 PM',
+      venue: 'Ganabharati Ramagovinda Kalavedike, Mysuru',
+    },
     isUpcoming: true,
   },
 ];
@@ -130,7 +177,6 @@ export const PAST_PERFORMANCES_DATA: PastPerformanceItem[] = [
     guests: 'Dr. Kripa Phadke, Dr. Sheela Sridhar, Guru Sri Sandesh Bharghav',
     description:
       'A rare glimpse of a five-generation legacy: Bharatanatyam Thematic Presentation "Kshaathra Draupadi" by Karnataka Kalathilaka, SNS Awardee Guru DR. Vasundhara Doraswamy. An evocative production blending sculptural precision, intense rhythmic footwork, and deep spiritual expression.',
-    image: '/images/RAW03377.jpg',
     tags: ['Thematic Presentation', 'Vasundhara Style', 'Guru Dr. Vasundhara Doraswamy'],
   },
 ];
@@ -374,7 +420,7 @@ export const NOTABLE_PERFORMANCES: NotablePerformanceItem[] = [
     location: 'Thillai Nataraja Temple, Chidambaram',
     summary: 'Team Nruthyathi led in classical dance presentation at the historic Chidambaram Natyanjali.',
     description: 'A deeply reverent classical recital presented by Team Nruthyathi at the sanctum sanctorum of Lord Nataraja in Chidambaram, upholding the age-old sacred traditions of Bharatanatyam.',
-    image: '/images/RAW05165.jpg',
+    image: '/images/events/chidambaram_natyanjali.jpg',
     tags: ['Chidambaram Natyanjali', 'Temple Recital', 'Team Nruthyathi'],
   },
   {
@@ -384,7 +430,7 @@ export const NOTABLE_PERFORMANCES: NotablePerformanceItem[] = [
     location: 'Mysuru, Karnataka',
     summary: 'Team Nruthyathi performances at the world-renowned Mysuru Dasara Mahotsav.',
     description: 'Graceful group and solo presentations at the state cultural celebrations of Mysuru Dasara, presenting rhythmic precision and vibrant classical storytelling to thousands of connoisseurs.',
-    image: '/images/DSC06732.jpg',
+    image: '/images/events/mysuru_dasara_2024.jpg',
     tags: ['Mysuru Dasara', 'Cultural Mahotsav', 'Team Nruthyathi'],
   },
   {
@@ -404,7 +450,7 @@ export const NOTABLE_PERFORMANCES: NotablePerformanceItem[] = [
     location: 'Mysuru',
     summary: 'Leading Team Nruthyathi in prestigious stage productions and thematic showcases.',
     description: 'Presentations combining dynamic choreography, expressive abhinaya, and cultural narratives across distinguished academic and performing arts stages in Mysuru.',
-    image: '/images/RKV_3220.jpg',
+    image: '/images/events/tedx_thematic_showcase.jpg',
     tags: ['TEDxJSSMC', 'Nrutya Naatakothsava', 'Thematic Productions'],
   },
 ];
